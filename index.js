@@ -52,3 +52,24 @@ if (!action) {
     display.textContent = keyContent
   }
 }
+
+if (!action) {
+  if (displayedNum === '0') {
+    display.textContent = keyContent
+  } else {
+    display.textContent = displayedNum + keyContent
+  }
+}
+
+if (action === 'decimal') {
+  display.textContent = displayedNum + '.'
+}
+
+if (
+  action === 'add' ||
+  action === 'subtract' ||
+  action === 'multiply' ||
+  action === 'divide'
+) {
+  key.classList.add('is-depressed')
+}
