@@ -104,3 +104,29 @@ keys.addEventListener('click', e => {
     }
   }
 })
+
+const previousKeyType = calculator.dataset.previousKeyType
+
+if (!action) {
+  if (displayedNum === '0' || previousKeyType === 'operator') {
+    display.textContent = keyContent
+  } else {
+    display.textContent = displayedNum + keyContent
+  }
+}
+
+if (action === 'calculate') {
+  const secondValue = displayedNum
+  // ...
+}
+
+if (
+  action === 'add' ||
+  action === 'subtract' ||
+  action === 'multiply' ||
+  action === 'divide'
+) {
+  // ...
+  calculator.dataset.firstValue = displayedNum
+  calculator.dataset.operator = action
+}
