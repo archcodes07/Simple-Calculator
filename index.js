@@ -73,3 +73,34 @@ if (
 ) {
   key.classList.add('is-depressed')
 }
+
+keys.addEventListener('click', e => {
+  if (e.target.matches('button')) {
+    const key = e.target
+    // ...
+    
+    // Remove .is-depressed class from all keys
+    Array.from(key.parentNode.children)
+      .forEach(k => k.classList.remove('is-depressed'))
+  }
+})
+
+const calculator = document.querySelector('.calculator')
+// ...
+
+keys.addEventListener('click', e => {
+  if (e.target.matches('button')) {
+    // ...
+    
+    if (
+      action === 'add' ||
+      action === 'subtract' ||
+      action === 'multiply' ||
+      action === 'divide'
+    ) {
+      key.classList.add('is-depressed')
+      // Add custom attribute
+      calculator.dataset.previousKeyType = 'operator'
+    }
+  }
+})
